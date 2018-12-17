@@ -13,41 +13,41 @@ This project is just another simple API example using Laravel 5.7. Using jwt-aut
 
 
 ## Preparation
-  1. Setup database tools (ex: xampp) -> Create a new database
-  2. Install git
+  <br />1. Setup database tools (ex: xampp) -> Create a new database
+  <br />2. Install git
 
 ## Installation
   This installation is performed using terminal. I assumed you are already known about this terminal uses.
 
-  0. Go to site folders (ex: xampp/htdocs/new-folder)
+  <br />0. Go to site folders (ex: xampp/htdocs/new-folder)
 
-  1. Clone the repository
-  https://github.com/Kalingrowo/Laravel-Simple-API.git
-
-  2. Switch to the repo folder
-  cd Meeting-Scheduler-API
-
-  3. Install the dependencies
-  composer install
-
-  4. Copy the example .env file (opt: rename the .env.example to .env)
-  cp .env.example .env
-
-  5. Configure the generated .env file  
-  DB_CONNECTION=mysql
-  DB_HOST=localhost*
-  DB_PORT=3306
-  DB_DATABASE=database_name*
-  DB_USERNAME=database_user*
-  DB_PASSWORD=database_pass*
-
-  6. Generate a new application key
-  php artisan key:generate
-
-  7. Generate jwt secret key
-  php artisan jwt:secret
-
-  8. Run the database migrations
-  php artisan migrate
-
-  9. Done
+  <br />1. Clone the repository
+  <br />https://github.com/Kalingrowo/Laravel-Simple-API.git
+<br />
+  <br />2. Switch to the repo folder
+  <br />cd Meeting-Scheduler-API
+<br />
+  <br />3. Install the dependencies
+  <br />composer install
+<br />
+  <br />4. Copy the example .env file (opt: rename the .env.example to .env)
+  <br />cp .env.example .env
+<br />
+  <br />5. Configure the generated .env file  
+  <br />DB_CONNECTION=mysql
+  <br />DB_HOST=localhost*
+  <br />DB_PORT=3306
+  <br />DB_DATABASE=database_name*
+  <br />DB_USERNAME=database_user*
+  <br />DB_PASSWORD=database_pass*
+<br />
+  <br />6. Generate a new application key
+  <br />php artisan key:generate
+<br />
+  <br />7. Generate jwt secret key
+  <br />php artisan jwt:secret
+<br />
+  <br />8. Run the database migrations
+  <br />php artisan migrate
+<br />
+  <br />9. Done
