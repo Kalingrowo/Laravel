@@ -83,7 +83,7 @@ The way to test the API (using Postman)
   <tr>
     <td>Create a new meeting</td>
     <td>{Accept:application/json}</td>
-    <td>{title, description, time, user_id} <br />Time format : 2018-12-14 00:00:00</td>
+    <td>{title, description, time, user_id} <br /><br />NB: Time format : 2018-12-14 00:00:00</td>
     <td>{token}</td>
     <td>{POST}</td>
     <td>api/v1/meeting</td>
