@@ -67,7 +67,7 @@ The way to test the API (using Postman)
     <td>Body</td>
     <td>Params</td>
     <td>Method</td>
-    <td>Response</td>
+    <td>URI</td>
   </tr>
   <tr>
     <td>Create a new meeting</td>
@@ -75,23 +75,7 @@ The way to test the API (using Postman)
     <td>{title, description, time, user_id}</td>
     <td>{token}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "msg": "Meeting created successfully !",
-        "meeting": {
-            "title": "API Dead",
-            "description": "??",
-            "time": "2018-12-15 10:00:00",
-            "updated_at": "2018-12-17 03:11:29",
-            "created_at": "2018-12-17 03:11:29",
-            "id": 5,
-            "view_meeting": {
-                "href": "api/v1/meeting/5",
-                "method": "GET"
-            }
-        }
-    }
-    </td>
+    <td>api/v1/meeting</td>
   </tr>
   <tr>
     <td>Update a meeting</td>
@@ -99,95 +83,7 @@ The way to test the API (using Postman)
     <td>{_method:PATCH, title, description, time, user_id}</td>
     <td>{token}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "msg": "Meeting update successfully !",
-        "meeting": {
-            "id": 5,
-            "title": "API Dead",
-            "description": "??!!",
-            "time": "2018-12-15 10:00:00",
-            "created_at": "2018-12-17 03:11:29",
-            "updated_at": "2018-12-17 03:24:26",
-            "view_meeting": {
-                "href": "api/v1/meeting5",
-                "method": "GET"
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "name": "user01",
-                    "email": "user01@gmail.com",
-                    "email_verified_at": null,
-                    "created_at": "2018-12-14 15:49:16",
-                    "updated_at": "2018-12-14 15:49:16",
-                    "pivot": {
-                        "meeting_id": 5,
-                        "user_id": 1
-                    }
-                }
-            ]
-        }
-    }
-    </td>
-  </tr>
-  <tr>
-    <td>Register user in a meeting</td>
-    <td>{Accept:application/json}</td>
-    <td>{meetin_id, user_id}</td>
-    <td>{token}</td>
-    <td>{POST}</td>
-    <td>
-    {
-        "msg": "User registered successfully !",
-        "user": {
-            "id": 2,
-            "name": "user02",
-            "email": "user02@gmail.com",
-            "email_verified_at": null,
-            "created_at": "2018-12-15 21:53:41",
-            "updated_at": "2018-12-15 21:53:41"
-        },
-        "meeting": {
-            "id": 5,
-            "title": "API Dead",
-            "description": "??!!",
-            "time": "2018-12-17 10:24:26",
-            "created_at": "2018-12-17 03:11:29",
-            "updated_at": "2018-12-17 03:24:26"
-        },
-        "unregister": {
-            "href": "api/v1/meeting/registration/5",
-            "method": "DELETE"
-        }
-    }
-    </td>
-  </tr>
-  <tr>
-    <td>Unregister users from a meeting</td>
-    <td>{Accept:application/json}</td>
-    <td>{_method:DELETE}</td>
-    <td>{token}</td>
-    <td>{POST}</td>
-    <td>
-    {
-        "msg": "All users unregistered for meeting !",
-        "user": "xAdmin",
-        "meeting": {
-            "id": 5,
-            "title": "API Dead",
-            "description": "??!!",
-            "time": "2018-12-17 10:24:26",
-            "created_at": "2018-12-17 03:11:29",
-            "updated_at": "2018-12-17 03:24:26"
-        },
-        "register": {
-            "href": "api/v1/meeting/registration/",
-            "method": "POST",
-            "params": "user_id, meeting_id"
-        }
-    }
-    </td>
+    <td>api/v1/meeting/{meeting}</td>
   </tr>
   <tr>
     <td>Delete a meeting</td>
@@ -195,16 +91,23 @@ The way to test the API (using Postman)
     <td>{_method:DELETE}</td>
     <td>{token}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "msg": "A meeting schedule deleted successfully !",
-        "create": {
-            "href": "api/v1/meeting",
-            "method": "POST",
-            "params": "title, description, time"
-        }
-    }
-    </td>
+    <td>api/v1/meeting/{meeting}</td>
+  </tr>
+  <tr>
+    <td>Register user in a meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{meetin_id, user_id}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>api/v1/meeting/registration</td>
+  </tr>
+  <tr>
+    <td>Unregister users from a meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{_method:DELETE}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>api/v1/meeting/registration/{registration}</td>
   </tr>
   <tr>
     <td>Create a user</td>
@@ -212,23 +115,7 @@ The way to test the API (using Postman)
     <td>{name, email, password}</td>
     <td>{}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "msg": "User created successfully !",
-        "user": {
-            "name": "user03",
-            "email": "user03@gmail.com",
-            "updated_at": "2018-12-17 01:30:59",
-            "created_at": "2018-12-17 01:30:59",
-            "id": 3,
-            "login": {
-                "href": "api/v1/user/login",
-                "method": "POST",
-                "params": "email, password"
-            }
-        }
-    }
-    </td>
+    <td>api/v1/user/register</td>
   </tr>
   <tr>
     <td>Get list of meetings</td>
@@ -236,37 +123,7 @@ The way to test the API (using Postman)
     <td>{}</td>
     <td>{}</td>
     <td>{GET}</td>
-    <td>
-    {
-        "msg": "List of all meetings",
-        "meetings": [
-            {
-                "id": 3,
-                "title": "Another meeting",
-                "description": "Description new meeting (3)",
-                "time": "2018-12-14 00:00:00",
-                "created_at": "2018-12-15 02:51:21",
-                "updated_at": "2018-12-15 02:51:21",
-                "view_meeting": {
-                    "href": "api/v1/meeting/3",
-                    "method": "GET"
-                }
-            },
-            {
-                "id": 4,
-                "title": "Meet me",
-                "description": "Meet someone",
-                "time": "2018-12-15 10:00:00",
-                "created_at": "2018-12-16 22:26:45",
-                "updated_at": "2018-12-16 22:26:45",
-                "view_meeting": {
-                    "href": "api/v1/meeting/4",
-                    "method": "GET"
-                }
-            }
-        ]
-    }
-    </td>
+    <td>api/v1/meeting</td>
   </tr>
   <tr>
     <td>Get meeting a detail</td>
@@ -274,61 +131,7 @@ The way to test the API (using Postman)
     <td>{}</td>
     <td>{}</td>
     <td>{GET}</td>
-    <td>
-    {
-        "msg": "Meeting information showed !",
-        "meeting": {
-            "id": 4,
-            "title": "Meet me",
-            "description": "Meet someone",
-            "time": "2018-12-15 10:00:00",
-            "created_at": "2018-12-16 22:26:45",
-            "updated_at": "2018-12-16 22:26:45",
-            "view_meetings": {
-                "href": "api/v1/meeting",
-                "method": "GET"
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "name": "user01",
-                    "email": "user01@gmail.com",
-                    "email_verified_at": null,
-                    "created_at": "2018-12-14 15:49:16",
-                    "updated_at": "2018-12-14 15:49:16",
-                    "pivot": {
-                        "meeting_id": 4,
-                        "user_id": 1
-                    }
-                },
-                {
-                    "id": 3,
-                    "name": "user03",
-                    "email": "user03@gmail.com",
-                    "email_verified_at": null,
-                    "created_at": "2018-12-17 01:30:59",
-                    "updated_at": "2018-12-17 01:30:59",
-                    "pivot": {
-                        "meeting_id": 4,
-                        "user_id": 3
-                    }
-                },
-                {
-                    "id": 2,
-                    "name": "user02",
-                    "email": "user02@gmail.com",
-                    "email_verified_at": null,
-                    "created_at": "2018-12-15 21:53:41",
-                    "updated_at": "2018-12-15 21:53:41",
-                    "pivot": {
-                        "meeting_id": 4,
-                        "user_id": 2
-                    }
-                }
-            ]
-        }
-    }
-    </td>
+    <td>api/v1/meeting/{meeting}</td>
   </tr>
   <tr>
     <td>User Login</td>
@@ -336,12 +139,7 @@ The way to test the API (using Postman)
     <td>{email, password}</td>
     <td>{}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC92MVwvdXNlclwvbG9naW4iLCJpYXQiOjE1NDUwMTYwODcsImV4cCI6MTU0NTAxOTY4NywibmJmIjoxNTQ1MDE2MDg3LCJqdGkiOiJIdkpoUkVKZ3ZZN3VyWFU0Iiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.gdZUidrnrOPEmm9ULIDd8muIwEtzgUNFKcRPFpVMG28",
-        "expires": 3600
-    }
-    </td>
+    <td>api/v1/user/login</td>
   </tr>
   <tr>
     <td>User Logout</td>
@@ -349,11 +147,7 @@ The way to test the API (using Postman)
     <td>{}</td>
     <td>{token}</td>
     <td>{POST}</td>
-    <td>
-    {
-        "message": "Successfully logged out"
-    }
-    </td>
+    <td>api/v1/user/logout</td>
   </tr>
 </table>
 
