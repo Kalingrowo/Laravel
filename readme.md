@@ -4,9 +4,9 @@
 This project is just another simple API example using Laravel 5.7. Using jwt-auth as auth system, this project is developed in a very simple way to make others easy to learn and get the insight from it.
 
 Reference :
-~ https://medium.com/@hdcompany123/laravel-5-7-and-json-web-tokens-tymon-jwt-auth-d5af05c0659a
-~ https://jwt-auth.readthedocs.io/en/develop/quick-start/#update-your-user-model
-~ https://www.youtube.com/playlist?list=PL1aMeb5UP_PHzUMNaDA4ikYH3ccXuLvKR
+<br />~ https://medium.com/@hdcompany123/laravel-5-7-and-json-web-tokens-tymon-jwt-auth-d5af05c0659a
+<br />~ https://jwt-auth.readthedocs.io/en/develop/quick-start/#update-your-user-model
+<br />~ https://www.youtube.com/playlist?list=PL1aMeb5UP_PHzUMNaDA4ikYH3ccXuLvKR
 
 ## Preparation
   <br />1. Setup database tools (ex: xampp) -> Create a new database
@@ -58,7 +58,7 @@ The way to test the API (using Postman)
 <br />~ php artisan serve
 <br />
 <br />2. API can be accessed at
-<br />127.0.0.1:8000/
+<br />~ 127.0.0.1:8000/
 <br />
 <br />3. open Postman
 <br />
