@@ -18,7 +18,7 @@ Reference :
 ## Installation
   This installation is performed using terminal. I assumed you are already known about this terminal uses.
 
-  <br />0. Open GitBash and Go to site folder (ex: xampp/htdocs/new-folder)
+  <br />0. Open GitBash and Go to site folder (ex: C:/xampp/htdocs/new-folder)
 
   <br />1. Clone the repository
   <br />~ git clone https://github.com/Kalingrowo/Laravel-Simple-API.git
@@ -47,7 +47,7 @@ Reference :
 <br />
   <br />6. Generate a new application key
   <br />~ php artisan key:generate
-  <br />* if return some problem, update the composer using "composer update --no-scripts"
+  <br />* if return some problems, update the composer using "composer update --no-scripts"
 <br />
   <br />7. Generate jwt secret key
   <br />~ php artisan jwt:secret
