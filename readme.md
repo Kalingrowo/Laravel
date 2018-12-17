@@ -9,38 +9,45 @@ Reference :
 <br />~ https://www.youtube.com/playlist?list=PL1aMeb5UP_PHzUMNaDA4ikYH3ccXuLvKR
 
 ## Preparation
-  <br />1. Setup database tools (ex: xampp) -> Create a new database
+  <br />1. Install database tools (ex: xampp) -> Create a new database
   <br />2. Install git
   <br />3. Install Postman
+  <br />3. Install composer
 
 
 ## Installation
   This installation is performed using terminal. I assumed you are already known about this terminal uses.
 
-  <br />0. Go to site folders (ex: xampp/htdocs/new-folder)
+  <br />0. Open GitBash and Go to site folder (ex: xampp/htdocs/new-folder)
 
   <br />1. Clone the repository
   <br />~ git clone https://github.com/Kalingrowo/Laravel-Simple-API.git
+  <br />* copy-paste command above to the gitbash
 <br />
-  <br />2. Switch to the repo folder
-  <br />~ cd Meeting-Scheduler-API
+  <br />2. Open cmd/terminal and go to the repo folder
+  <br />~ cd laravel-simple-api
+  <br />* use the similiar way as step 0 above to go to site folder
 <br />
-  <br />3. Install the dependencies
+  <br />3. Install the dependencies using composer
   <br />~ composer install
 <br />
   <br />4. Copy the example .env file (opt: rename the .env.example to .env)
-  <br />~ cp .env.example .env
+  <br />~ copy .env.example .env
 <br />
   <br />5. Configure the generated .env file
   <br />DB_CONNECTION=mysql
   <br />DB_HOST=localhost*
   <br />DB_PORT=3306
-  <br />DB_DATABASE=database_name*
-  <br />DB_USERNAME=database_user*
-  <br />DB_PASSWORD=database_pass*
+  <br />DB_DATABASE=db_name*
+  <br />DB_USERNAME=db_user*
+  <br />DB_PASSWORD=db_pass*
+  <br />
+  <br />* set the db_name to the name of database that created before
+  <br />* default of db_user is 'root', and db_pass is empty
 <br />
   <br />6. Generate a new application key
   <br />~ php artisan key:generate
+  <br />* if return some problem, update the composer using "composer update --no-scripts"
 <br />
   <br />7. Generate jwt secret key
   <br />~ php artisan jwt:secret
@@ -76,7 +83,7 @@ The way to test the API (using Postman)
   <tr>
     <td>Create a new meeting</td>
     <td>{Accept:application/json}</td>
-    <td>{title, description, time, user_id}</td>
+    <td>{title, description, time, user_id} <br />Time format : 2018-12-14 00:00:00</td>
     <td>{token}</td>
     <td>{POST}</td>
     <td>api/v1/meeting</td>
