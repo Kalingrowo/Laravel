@@ -17,18 +17,23 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::group(['prefix' => 'v1'], function() {
+Route::group([
+  'prefix' => 'v1',
+  'middleware' => 'cors'
+], function() {
+
   Route::resource('meeting', 'MeetingController', [
     'except' => ['create', 'edit']
   ]);
-
   Route::resource('meeting/registration', 'RegisterController', [
     'only' => ['store', 'destroy']
   ]);
-
   Route::post('/user/register', [
     'uses' => 'AuthController@store'
   ]);
 
-  Route::post('/user/signin', 'AuthController@signin');
+  Route::post('/user/login', 'AuthController@login');
+  Route::post('/user/logout', 'AuthController@logout');
+  Route::post('/user/refresh', 'AuthController@refresh');
+  Route::post('/user/me', 'AuthController@me');
 });
