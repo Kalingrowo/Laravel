@@ -66,68 +66,106 @@ The way to test the API (using Postman)
 <br />3. open Postman
 <br />
 <br />4. Request test
-<br />a. Create a new meeting
-<br />a.1 Header
-<br />a.2 Body
-<br />a.3 Params
-<br />a.4 Method
-<br />a.5. Response
-<br />b. Update a meeting
-<br />b.1 Header
-<br />b.2 Body
-<br />b.3 Params
-<br />b.4 Method
-<br />b.5. Response
-<br />c. Delete a meeting
-<br />c.1 Header
-<br />c.2 Body
-<br />c.3 Params
-<br />c.4 Method
-<br />c.5. Response
-<br />d. Register a user to a meeting
-<br />d.1 Header
-<br />d.2 Body
-<br />d.3 Params
-<br />d.4 Method
-<br />d.5. Response
-<br />e. Remove users from a meeting
-<br />e.1 Header
-<br />e.2 Body
-<br />e.3 Params
-<br />e.4 Method
-<br />e.5. Response
-<br />f. Create a new user
-<br />f.1 Header
-<br />f.2 Body
-<br />f.3 Params
-<br />f.4 Method
-<br />f.5. Response
-<br />g. Login user
-<br />g.1 Header
-<br />g.2 Body
-<br />g.3 Params
-<br />g.4 Method
-<br />g.5. Response
-<br />h. Logout user
-<br />h.1 Header
-<br />h.2 Body
-<br />h.3 Params
-<br />h.4 Method
-<br />h.5. Response
-<br />i. Get list of meetings
-<br />i.1 Header
-<br />i.2 Body
-<br />i.3 Params
-<br />i.4 Method
-<br />i.5. Response
-<br />j. Get a meeting details
-<br />j.1 Header
-<br />j.2 Body
-<br />j.3 Params
-<br />j.4 Method
-<br />j.5. Response
-
-
+<br />
+<table>
+  <tr>
+    <td>Test</td>
+    <td>Header</td>
+    <td>Body</td>
+    <td>Params</td>
+    <td>Method</td>
+    <td>Response</td>
+  </tr>
+  <tr>
+    <td>Create a new meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{title, description, time, user_id}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>
+    {
+        "msg": "Meeting created successfully !",
+        "meeting": {
+            "title": "API Dead",
+            "description": "??",
+            "time": "2018-12-15 10:00:00",
+            "updated_at": "2018-12-17 03:11:29",
+            "created_at": "2018-12-17 03:11:29",
+            "id": 5,
+            "view_meeting": {
+                "href": "api/v1/meeting/5",
+                "method": "GET"
+            }
+        }
+    }
+    </td>
+  </tr>
+  <tr>
+    <td>Update a meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{title, description, time, user_id, \_method:PATCH}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>
+    {
+        "msg": "Meeting update successfully !",
+        "meeting": {
+            "id": 5,
+            "title": "API Dead",
+            "description": "??!!",
+            "time": "2018-12-15 10:00:00",
+            "created_at": "2018-12-17 03:11:29",
+            "updated_at": "2018-12-17 03:24:26",
+            "view_meeting": {
+                "href": "api/v1/meeting5",
+                "method": "GET"
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "name": "user01",
+                    "email": "user01@gmail.com",
+                    "email_verified_at": null,
+                    "created_at": "2018-12-14 15:49:16",
+                    "updated_at": "2018-12-14 15:49:16",
+                    "pivot": {
+                        "meeting_id": 5,
+                        "user_id": 1
+                    }
+                }
+            ]
+        }
+    }
+    </td>
+  </tr>
+  <tr>
+    <td>Create a new meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{title, description, time, user_id}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Create a new meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{title, description, time, user_id}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Create a new meeting</td>
+    <td>{Accept:application/json}</td>
+    <td>{title, description, time, user_id}</td>
+    <td>{token}</td>
+    <td>{POST}</td>
+    <td>
+    </td>
+  </tr>
+</table>
 
 
 ## Installation
