@@ -21,7 +21,7 @@ Route::group(['prefix' => 'v1'], function() {
   Route::resource('meeting', 'MeetingController', [
     'except' => ['create', 'edit']
   ]);
-
+  
   Route::resource('meeting/registration', 'RegisterController', [
     'only' => ['store', 'destroy']
   ]);
